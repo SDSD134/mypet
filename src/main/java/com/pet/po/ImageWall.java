@@ -1,0 +1,65 @@
+package com.pet.po;
+
+import java.util.Date;
+
+public class ImageWall {
+    private String imageId;
+
+    private String userId;
+
+    private String imamgeUrl;
+
+    private String imageTitle;
+
+    private Date createTime;
+
+    private Date updateTime;
+
+    public String getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId == null ? null : imageId.trim();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
+
+    public String getImamgeUrl() {
+        return imamgeUrl;
+    }
+
+    public void setImamgeUrl(String imamgeUrl) {
+        this.imamgeUrl = imamgeUrl == null ? null : imamgeUrl.trim();
+    }
+
+    public String getImageTitle() {
+        return imageTitle;
+    }
+
+    public void setImageTitle(String imageTitle) {
+        this.imageTitle = imageTitle == null ? null : imageTitle.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+}
