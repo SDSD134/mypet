@@ -1,7 +1,7 @@
 package com.pet.mapper;
 
-import com.pet.po.Pet;
-import com.pet.po.PetExample;
+import com.pet.pojo.Pet;
+import com.pet.pojo.PetExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

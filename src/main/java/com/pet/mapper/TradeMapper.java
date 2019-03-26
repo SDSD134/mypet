@@ -1,7 +1,7 @@
 package com.pet.mapper;
 
-import com.pet.po.Trade;
-import com.pet.po.TradeExample;
+import com.pet.pojo.Trade;
+import com.pet.pojo.TradeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

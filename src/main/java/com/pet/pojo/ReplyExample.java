@@ -1,4 +1,4 @@
-package com.pet.po;
+package com.pet.pojo;
 
 import java.util.ArrayList;
 import java.util.Date;

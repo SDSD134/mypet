@@ -1,17 +1,17 @@
-package com.pet.po;
+package com.pet.pojo;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ArticleExample {
+public class CommentExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public ArticleExample() {
+    public CommentExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -105,6 +105,76 @@ public class ArticleExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
+        public Criteria andCommentIdIsNull() {
+            addCriterion("comment_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdIsNotNull() {
+            addCriterion("comment_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdEqualTo(String value) {
+            addCriterion("comment_id =", value, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdNotEqualTo(String value) {
+            addCriterion("comment_id <>", value, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdGreaterThan(String value) {
+            addCriterion("comment_id >", value, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdGreaterThanOrEqualTo(String value) {
+            addCriterion("comment_id >=", value, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdLessThan(String value) {
+            addCriterion("comment_id <", value, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdLessThanOrEqualTo(String value) {
+            addCriterion("comment_id <=", value, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdLike(String value) {
+            addCriterion("comment_id like", value, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdNotLike(String value) {
+            addCriterion("comment_id not like", value, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdIn(List<String> values) {
+            addCriterion("comment_id in", values, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdNotIn(List<String> values) {
+            addCriterion("comment_id not in", values, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdBetween(String value1, String value2) {
+            addCriterion("comment_id between", value1, value2, "commentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentIdNotBetween(String value1, String value2) {
+            addCriterion("comment_id not between", value1, value2, "commentId");
+            return (Criteria) this;
+        }
+
         public Criteria andArticleIdIsNull() {
             addCriterion("article_id is null");
             return (Criteria) this;
@@ -175,63 +245,73 @@ public class ArticleExample {
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeIsNull() {
-            addCriterion("artcle_type is null");
+        public Criteria andCommentTextIsNull() {
+            addCriterion("comment_text is null");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeIsNotNull() {
-            addCriterion("artcle_type is not null");
+        public Criteria andCommentTextIsNotNull() {
+            addCriterion("comment_text is not null");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeEqualTo(Integer value) {
-            addCriterion("artcle_type =", value, "artcleType");
+        public Criteria andCommentTextEqualTo(String value) {
+            addCriterion("comment_text =", value, "commentText");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeNotEqualTo(Integer value) {
-            addCriterion("artcle_type <>", value, "artcleType");
+        public Criteria andCommentTextNotEqualTo(String value) {
+            addCriterion("comment_text <>", value, "commentText");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeGreaterThan(Integer value) {
-            addCriterion("artcle_type >", value, "artcleType");
+        public Criteria andCommentTextGreaterThan(String value) {
+            addCriterion("comment_text >", value, "commentText");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("artcle_type >=", value, "artcleType");
+        public Criteria andCommentTextGreaterThanOrEqualTo(String value) {
+            addCriterion("comment_text >=", value, "commentText");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeLessThan(Integer value) {
-            addCriterion("artcle_type <", value, "artcleType");
+        public Criteria andCommentTextLessThan(String value) {
+            addCriterion("comment_text <", value, "commentText");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("artcle_type <=", value, "artcleType");
+        public Criteria andCommentTextLessThanOrEqualTo(String value) {
+            addCriterion("comment_text <=", value, "commentText");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeIn(List<Integer> values) {
-            addCriterion("artcle_type in", values, "artcleType");
+        public Criteria andCommentTextLike(String value) {
+            addCriterion("comment_text like", value, "commentText");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeNotIn(List<Integer> values) {
-            addCriterion("artcle_type not in", values, "artcleType");
+        public Criteria andCommentTextNotLike(String value) {
+            addCriterion("comment_text not like", value, "commentText");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeBetween(Integer value1, Integer value2) {
-            addCriterion("artcle_type between", value1, value2, "artcleType");
+        public Criteria andCommentTextIn(List<String> values) {
+            addCriterion("comment_text in", values, "commentText");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("artcle_type not between", value1, value2, "artcleType");
+        public Criteria andCommentTextNotIn(List<String> values) {
+            addCriterion("comment_text not in", values, "commentText");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentTextBetween(String value1, String value2) {
+            addCriterion("comment_text between", value1, value2, "commentText");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentTextNotBetween(String value1, String value2) {
+            addCriterion("comment_text not between", value1, value2, "commentText");
             return (Criteria) this;
         }
 
@@ -302,76 +382,6 @@ public class ArticleExample {
 
         public Criteria andUserIdNotBetween(String value1, String value2) {
             addCriterion("user_id not between", value1, value2, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageIsNull() {
-            addCriterion("article_image is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageIsNotNull() {
-            addCriterion("article_image is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageEqualTo(String value) {
-            addCriterion("article_image =", value, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageNotEqualTo(String value) {
-            addCriterion("article_image <>", value, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageGreaterThan(String value) {
-            addCriterion("article_image >", value, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageGreaterThanOrEqualTo(String value) {
-            addCriterion("article_image >=", value, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageLessThan(String value) {
-            addCriterion("article_image <", value, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageLessThanOrEqualTo(String value) {
-            addCriterion("article_image <=", value, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageLike(String value) {
-            addCriterion("article_image like", value, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageNotLike(String value) {
-            addCriterion("article_image not like", value, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageIn(List<String> values) {
-            addCriterion("article_image in", values, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageNotIn(List<String> values) {
-            addCriterion("article_image not in", values, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageBetween(String value1, String value2) {
-            addCriterion("article_image between", value1, value2, "articleImage");
-            return (Criteria) this;
-        }
-
-        public Criteria andArticleImageNotBetween(String value1, String value2) {
-            addCriterion("article_image not between", value1, value2, "articleImage");
             return (Criteria) this;
         }
 

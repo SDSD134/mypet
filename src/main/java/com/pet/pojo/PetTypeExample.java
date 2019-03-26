@@ -1,17 +1,17 @@
-package com.pet.po;
+package com.pet.pojo;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CommentExample {
+public class PetTypeExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public CommentExample() {
+    public PetTypeExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -105,283 +105,143 @@ public class CommentExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andCommentIdIsNull() {
-            addCriterion("comment_id is null");
+        public Criteria andTypeIdIsNull() {
+            addCriterion("type_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdIsNotNull() {
-            addCriterion("comment_id is not null");
+        public Criteria andTypeIdIsNotNull() {
+            addCriterion("type_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdEqualTo(String value) {
-            addCriterion("comment_id =", value, "commentId");
+        public Criteria andTypeIdEqualTo(String value) {
+            addCriterion("type_id =", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdNotEqualTo(String value) {
-            addCriterion("comment_id <>", value, "commentId");
+        public Criteria andTypeIdNotEqualTo(String value) {
+            addCriterion("type_id <>", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdGreaterThan(String value) {
-            addCriterion("comment_id >", value, "commentId");
+        public Criteria andTypeIdGreaterThan(String value) {
+            addCriterion("type_id >", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdGreaterThanOrEqualTo(String value) {
-            addCriterion("comment_id >=", value, "commentId");
+        public Criteria andTypeIdGreaterThanOrEqualTo(String value) {
+            addCriterion("type_id >=", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdLessThan(String value) {
-            addCriterion("comment_id <", value, "commentId");
+        public Criteria andTypeIdLessThan(String value) {
+            addCriterion("type_id <", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdLessThanOrEqualTo(String value) {
-            addCriterion("comment_id <=", value, "commentId");
+        public Criteria andTypeIdLessThanOrEqualTo(String value) {
+            addCriterion("type_id <=", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdLike(String value) {
-            addCriterion("comment_id like", value, "commentId");
+        public Criteria andTypeIdLike(String value) {
+            addCriterion("type_id like", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdNotLike(String value) {
-            addCriterion("comment_id not like", value, "commentId");
+        public Criteria andTypeIdNotLike(String value) {
+            addCriterion("type_id not like", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdIn(List<String> values) {
-            addCriterion("comment_id in", values, "commentId");
+        public Criteria andTypeIdIn(List<String> values) {
+            addCriterion("type_id in", values, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdNotIn(List<String> values) {
-            addCriterion("comment_id not in", values, "commentId");
+        public Criteria andTypeIdNotIn(List<String> values) {
+            addCriterion("type_id not in", values, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdBetween(String value1, String value2) {
-            addCriterion("comment_id between", value1, value2, "commentId");
+        public Criteria andTypeIdBetween(String value1, String value2) {
+            addCriterion("type_id between", value1, value2, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andCommentIdNotBetween(String value1, String value2) {
-            addCriterion("comment_id not between", value1, value2, "commentId");
+        public Criteria andTypeIdNotBetween(String value1, String value2) {
+            addCriterion("type_id not between", value1, value2, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdIsNull() {
-            addCriterion("article_id is null");
+        public Criteria andTypeNameIsNull() {
+            addCriterion("type_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdIsNotNull() {
-            addCriterion("article_id is not null");
+        public Criteria andTypeNameIsNotNull() {
+            addCriterion("type_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdEqualTo(String value) {
-            addCriterion("article_id =", value, "articleId");
+        public Criteria andTypeNameEqualTo(String value) {
+            addCriterion("type_name =", value, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdNotEqualTo(String value) {
-            addCriterion("article_id <>", value, "articleId");
+        public Criteria andTypeNameNotEqualTo(String value) {
+            addCriterion("type_name <>", value, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdGreaterThan(String value) {
-            addCriterion("article_id >", value, "articleId");
+        public Criteria andTypeNameGreaterThan(String value) {
+            addCriterion("type_name >", value, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdGreaterThanOrEqualTo(String value) {
-            addCriterion("article_id >=", value, "articleId");
+        public Criteria andTypeNameGreaterThanOrEqualTo(String value) {
+            addCriterion("type_name >=", value, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdLessThan(String value) {
-            addCriterion("article_id <", value, "articleId");
+        public Criteria andTypeNameLessThan(String value) {
+            addCriterion("type_name <", value, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdLessThanOrEqualTo(String value) {
-            addCriterion("article_id <=", value, "articleId");
+        public Criteria andTypeNameLessThanOrEqualTo(String value) {
+            addCriterion("type_name <=", value, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdLike(String value) {
-            addCriterion("article_id like", value, "articleId");
+        public Criteria andTypeNameLike(String value) {
+            addCriterion("type_name like", value, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdNotLike(String value) {
-            addCriterion("article_id not like", value, "articleId");
+        public Criteria andTypeNameNotLike(String value) {
+            addCriterion("type_name not like", value, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdIn(List<String> values) {
-            addCriterion("article_id in", values, "articleId");
+        public Criteria andTypeNameIn(List<String> values) {
+            addCriterion("type_name in", values, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdNotIn(List<String> values) {
-            addCriterion("article_id not in", values, "articleId");
+        public Criteria andTypeNameNotIn(List<String> values) {
+            addCriterion("type_name not in", values, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdBetween(String value1, String value2) {
-            addCriterion("article_id between", value1, value2, "articleId");
+        public Criteria andTypeNameBetween(String value1, String value2) {
+            addCriterion("type_name between", value1, value2, "typeName");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIdNotBetween(String value1, String value2) {
-            addCriterion("article_id not between", value1, value2, "articleId");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextIsNull() {
-            addCriterion("comment_text is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextIsNotNull() {
-            addCriterion("comment_text is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextEqualTo(String value) {
-            addCriterion("comment_text =", value, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextNotEqualTo(String value) {
-            addCriterion("comment_text <>", value, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextGreaterThan(String value) {
-            addCriterion("comment_text >", value, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextGreaterThanOrEqualTo(String value) {
-            addCriterion("comment_text >=", value, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextLessThan(String value) {
-            addCriterion("comment_text <", value, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextLessThanOrEqualTo(String value) {
-            addCriterion("comment_text <=", value, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextLike(String value) {
-            addCriterion("comment_text like", value, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextNotLike(String value) {
-            addCriterion("comment_text not like", value, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextIn(List<String> values) {
-            addCriterion("comment_text in", values, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextNotIn(List<String> values) {
-            addCriterion("comment_text not in", values, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextBetween(String value1, String value2) {
-            addCriterion("comment_text between", value1, value2, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentTextNotBetween(String value1, String value2) {
-            addCriterion("comment_text not between", value1, value2, "commentText");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdIsNull() {
-            addCriterion("user_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdIsNotNull() {
-            addCriterion("user_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdEqualTo(String value) {
-            addCriterion("user_id =", value, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdNotEqualTo(String value) {
-            addCriterion("user_id <>", value, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdGreaterThan(String value) {
-            addCriterion("user_id >", value, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdGreaterThanOrEqualTo(String value) {
-            addCriterion("user_id >=", value, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdLessThan(String value) {
-            addCriterion("user_id <", value, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdLessThanOrEqualTo(String value) {
-            addCriterion("user_id <=", value, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdLike(String value) {
-            addCriterion("user_id like", value, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdNotLike(String value) {
-            addCriterion("user_id not like", value, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdIn(List<String> values) {
-            addCriterion("user_id in", values, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdNotIn(List<String> values) {
-            addCriterion("user_id not in", values, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdBetween(String value1, String value2) {
-            addCriterion("user_id between", value1, value2, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserIdNotBetween(String value1, String value2) {
-            addCriterion("user_id not between", value1, value2, "userId");
+        public Criteria andTypeNameNotBetween(String value1, String value2) {
+            addCriterion("type_name not between", value1, value2, "typeName");
             return (Criteria) this;
         }
 

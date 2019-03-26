@@ -1,27 +1,21 @@
-package com.pet.po;
+package com.pet.pojo;
 
 import java.util.Date;
 
-public class Comment {
-    private String commentId;
-
+public class Article {
     private String articleId;
 
-    private String commentText;
+    private Integer artcleType;
 
     private String userId;
+
+    private String articleImage;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public String getCommentId() {
-        return commentId;
-    }
-
-    public void setCommentId(String commentId) {
-        this.commentId = commentId == null ? null : commentId.trim();
-    }
+    private String articleText;
 
     public String getArticleId() {
         return articleId;
@@ -31,12 +25,12 @@ public class Comment {
         this.articleId = articleId == null ? null : articleId.trim();
     }
 
-    public String getCommentText() {
-        return commentText;
+    public Integer getArtcleType() {
+        return artcleType;
     }
 
-    public void setCommentText(String commentText) {
-        this.commentText = commentText == null ? null : commentText.trim();
+    public void setArtcleType(Integer artcleType) {
+        this.artcleType = artcleType;
     }
 
     public String getUserId() {
@@ -45,6 +39,14 @@ public class Comment {
 
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
+    }
+
+    public String getArticleImage() {
+        return articleImage;
+    }
+
+    public void setArticleImage(String articleImage) {
+        this.articleImage = articleImage == null ? null : articleImage.trim();
     }
 
     public Date getCreateTime() {
@@ -61,5 +63,13 @@ public class Comment {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getArticleText() {
+        return articleText;
+    }
+
+    public void setArticleText(String articleText) {
+        this.articleText = articleText == null ? null : articleText.trim();
     }
 }

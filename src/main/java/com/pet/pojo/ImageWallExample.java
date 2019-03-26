@@ -1,17 +1,17 @@
-package com.pet.po;
+package com.pet.pojo;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class NewsExample {
+public class ImageWallExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public NewsExample() {
+    public ImageWallExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -105,213 +105,283 @@ public class NewsExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andNewsIdIsNull() {
-            addCriterion("news_id is null");
+        public Criteria andImageIdIsNull() {
+            addCriterion("image_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdIsNotNull() {
-            addCriterion("news_id is not null");
+        public Criteria andImageIdIsNotNull() {
+            addCriterion("image_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdEqualTo(String value) {
-            addCriterion("news_id =", value, "newsId");
+        public Criteria andImageIdEqualTo(String value) {
+            addCriterion("image_id =", value, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdNotEqualTo(String value) {
-            addCriterion("news_id <>", value, "newsId");
+        public Criteria andImageIdNotEqualTo(String value) {
+            addCriterion("image_id <>", value, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdGreaterThan(String value) {
-            addCriterion("news_id >", value, "newsId");
+        public Criteria andImageIdGreaterThan(String value) {
+            addCriterion("image_id >", value, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdGreaterThanOrEqualTo(String value) {
-            addCriterion("news_id >=", value, "newsId");
+        public Criteria andImageIdGreaterThanOrEqualTo(String value) {
+            addCriterion("image_id >=", value, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdLessThan(String value) {
-            addCriterion("news_id <", value, "newsId");
+        public Criteria andImageIdLessThan(String value) {
+            addCriterion("image_id <", value, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdLessThanOrEqualTo(String value) {
-            addCriterion("news_id <=", value, "newsId");
+        public Criteria andImageIdLessThanOrEqualTo(String value) {
+            addCriterion("image_id <=", value, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdLike(String value) {
-            addCriterion("news_id like", value, "newsId");
+        public Criteria andImageIdLike(String value) {
+            addCriterion("image_id like", value, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdNotLike(String value) {
-            addCriterion("news_id not like", value, "newsId");
+        public Criteria andImageIdNotLike(String value) {
+            addCriterion("image_id not like", value, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdIn(List<String> values) {
-            addCriterion("news_id in", values, "newsId");
+        public Criteria andImageIdIn(List<String> values) {
+            addCriterion("image_id in", values, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdNotIn(List<String> values) {
-            addCriterion("news_id not in", values, "newsId");
+        public Criteria andImageIdNotIn(List<String> values) {
+            addCriterion("image_id not in", values, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdBetween(String value1, String value2) {
-            addCriterion("news_id between", value1, value2, "newsId");
+        public Criteria andImageIdBetween(String value1, String value2) {
+            addCriterion("image_id between", value1, value2, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdNotBetween(String value1, String value2) {
-            addCriterion("news_id not between", value1, value2, "newsId");
+        public Criteria andImageIdNotBetween(String value1, String value2) {
+            addCriterion("image_id not between", value1, value2, "imageId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleIsNull() {
-            addCriterion("news_title is null");
+        public Criteria andUserIdIsNull() {
+            addCriterion("user_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleIsNotNull() {
-            addCriterion("news_title is not null");
+        public Criteria andUserIdIsNotNull() {
+            addCriterion("user_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleEqualTo(String value) {
-            addCriterion("news_title =", value, "newsTitle");
+        public Criteria andUserIdEqualTo(String value) {
+            addCriterion("user_id =", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleNotEqualTo(String value) {
-            addCriterion("news_title <>", value, "newsTitle");
+        public Criteria andUserIdNotEqualTo(String value) {
+            addCriterion("user_id <>", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleGreaterThan(String value) {
-            addCriterion("news_title >", value, "newsTitle");
+        public Criteria andUserIdGreaterThan(String value) {
+            addCriterion("user_id >", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleGreaterThanOrEqualTo(String value) {
-            addCriterion("news_title >=", value, "newsTitle");
+        public Criteria andUserIdGreaterThanOrEqualTo(String value) {
+            addCriterion("user_id >=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleLessThan(String value) {
-            addCriterion("news_title <", value, "newsTitle");
+        public Criteria andUserIdLessThan(String value) {
+            addCriterion("user_id <", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleLessThanOrEqualTo(String value) {
-            addCriterion("news_title <=", value, "newsTitle");
+        public Criteria andUserIdLessThanOrEqualTo(String value) {
+            addCriterion("user_id <=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleLike(String value) {
-            addCriterion("news_title like", value, "newsTitle");
+        public Criteria andUserIdLike(String value) {
+            addCriterion("user_id like", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleNotLike(String value) {
-            addCriterion("news_title not like", value, "newsTitle");
+        public Criteria andUserIdNotLike(String value) {
+            addCriterion("user_id not like", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleIn(List<String> values) {
-            addCriterion("news_title in", values, "newsTitle");
+        public Criteria andUserIdIn(List<String> values) {
+            addCriterion("user_id in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleNotIn(List<String> values) {
-            addCriterion("news_title not in", values, "newsTitle");
+        public Criteria andUserIdNotIn(List<String> values) {
+            addCriterion("user_id not in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleBetween(String value1, String value2) {
-            addCriterion("news_title between", value1, value2, "newsTitle");
+        public Criteria andUserIdBetween(String value1, String value2) {
+            addCriterion("user_id between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsTitleNotBetween(String value1, String value2) {
-            addCriterion("news_title not between", value1, value2, "newsTitle");
+        public Criteria andUserIdNotBetween(String value1, String value2) {
+            addCriterion("user_id not between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionIsNull() {
-            addCriterion("news_descriprion is null");
+        public Criteria andImamgeUrlIsNull() {
+            addCriterion("imamge_url is null");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionIsNotNull() {
-            addCriterion("news_descriprion is not null");
+        public Criteria andImamgeUrlIsNotNull() {
+            addCriterion("imamge_url is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionEqualTo(String value) {
-            addCriterion("news_descriprion =", value, "newsDescriprion");
+        public Criteria andImamgeUrlEqualTo(String value) {
+            addCriterion("imamge_url =", value, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionNotEqualTo(String value) {
-            addCriterion("news_descriprion <>", value, "newsDescriprion");
+        public Criteria andImamgeUrlNotEqualTo(String value) {
+            addCriterion("imamge_url <>", value, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionGreaterThan(String value) {
-            addCriterion("news_descriprion >", value, "newsDescriprion");
+        public Criteria andImamgeUrlGreaterThan(String value) {
+            addCriterion("imamge_url >", value, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionGreaterThanOrEqualTo(String value) {
-            addCriterion("news_descriprion >=", value, "newsDescriprion");
+        public Criteria andImamgeUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("imamge_url >=", value, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionLessThan(String value) {
-            addCriterion("news_descriprion <", value, "newsDescriprion");
+        public Criteria andImamgeUrlLessThan(String value) {
+            addCriterion("imamge_url <", value, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionLessThanOrEqualTo(String value) {
-            addCriterion("news_descriprion <=", value, "newsDescriprion");
+        public Criteria andImamgeUrlLessThanOrEqualTo(String value) {
+            addCriterion("imamge_url <=", value, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionLike(String value) {
-            addCriterion("news_descriprion like", value, "newsDescriprion");
+        public Criteria andImamgeUrlLike(String value) {
+            addCriterion("imamge_url like", value, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionNotLike(String value) {
-            addCriterion("news_descriprion not like", value, "newsDescriprion");
+        public Criteria andImamgeUrlNotLike(String value) {
+            addCriterion("imamge_url not like", value, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionIn(List<String> values) {
-            addCriterion("news_descriprion in", values, "newsDescriprion");
+        public Criteria andImamgeUrlIn(List<String> values) {
+            addCriterion("imamge_url in", values, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionNotIn(List<String> values) {
-            addCriterion("news_descriprion not in", values, "newsDescriprion");
+        public Criteria andImamgeUrlNotIn(List<String> values) {
+            addCriterion("imamge_url not in", values, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionBetween(String value1, String value2) {
-            addCriterion("news_descriprion between", value1, value2, "newsDescriprion");
+        public Criteria andImamgeUrlBetween(String value1, String value2) {
+            addCriterion("imamge_url between", value1, value2, "imamgeUrl");
             return (Criteria) this;
         }
 
-        public Criteria andNewsDescriprionNotBetween(String value1, String value2) {
-            addCriterion("news_descriprion not between", value1, value2, "newsDescriprion");
+        public Criteria andImamgeUrlNotBetween(String value1, String value2) {
+            addCriterion("imamge_url not between", value1, value2, "imamgeUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleIsNull() {
+            addCriterion("image_title is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleIsNotNull() {
+            addCriterion("image_title is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleEqualTo(String value) {
+            addCriterion("image_title =", value, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleNotEqualTo(String value) {
+            addCriterion("image_title <>", value, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleGreaterThan(String value) {
+            addCriterion("image_title >", value, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleGreaterThanOrEqualTo(String value) {
+            addCriterion("image_title >=", value, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleLessThan(String value) {
+            addCriterion("image_title <", value, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleLessThanOrEqualTo(String value) {
+            addCriterion("image_title <=", value, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleLike(String value) {
+            addCriterion("image_title like", value, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleNotLike(String value) {
+            addCriterion("image_title not like", value, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleIn(List<String> values) {
+            addCriterion("image_title in", values, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleNotIn(List<String> values) {
+            addCriterion("image_title not in", values, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleBetween(String value1, String value2) {
+            addCriterion("image_title between", value1, value2, "imageTitle");
+            return (Criteria) this;
+        }
+
+        public Criteria andImageTitleNotBetween(String value1, String value2) {
+            addCriterion("image_title not between", value1, value2, "imageTitle");
             return (Criteria) this;
         }
 

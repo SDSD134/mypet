@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pet.mapper.PetMapper" >
-  <resultMap id="BaseResultMap" type="com.pet.po.Pet" >
+  <resultMap id="BaseResultMap" type="com.pet.pojo.Pet" >
     <id column="pet_id" property="petId" jdbcType="VARCHAR" />
     <result column="pet_name" property="petName" jdbcType="VARCHAR" />
     <result column="pet_type_id" property="petTypeId" jdbcType="VARCHAR" />
@@ -73,7 +73,7 @@
     pet_id, pet_name, pet_type_id, pet_image, pet_description, create_time, update_time, 
     user_id
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pet.po.PetExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pet.pojo.PetExample" >
     select
     <if test="distinct" >
       distinct
@@ -97,13 +97,13 @@
     delete from pet
     where pet_id = #{petId,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.pet.po.PetExample" >
+  <delete id="deleteByExample" parameterType="com.pet.pojo.PetExample" >
     delete from pet
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.pet.po.Pet" >
+  <insert id="insert" parameterType="com.pet.pojo.Pet" >
     insert into pet (pet_id, pet_name, pet_type_id, 
       pet_image, pet_description, create_time, 
       update_time, user_id)
@@ -111,7 +111,7 @@
       #{petImage,jdbcType=VARCHAR}, #{petDescription,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{userId,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pet.po.Pet" >
+  <insert id="insertSelective" parameterType="com.pet.pojo.Pet" >
     insert into pet
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="petId != null" >
@@ -166,7 +166,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.pet.po.PetExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.pet.pojo.PetExample" resultType="java.lang.Integer" >
     select count(*) from pet
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -218,7 +218,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pet.po.Pet" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pet.pojo.Pet" >
     update pet
     <set >
       <if test="petName != null" >
@@ -245,7 +245,7 @@
     </set>
     where pet_id = #{petId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pet.po.Pet" >
+  <update id="updateByPrimaryKey" parameterType="com.pet.pojo.Pet" >
     update pet
     set pet_name = #{petName,jdbcType=VARCHAR},
       pet_type_id = #{petTypeId,jdbcType=VARCHAR},

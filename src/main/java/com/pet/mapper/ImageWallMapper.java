@@ -1,7 +1,7 @@
 package com.pet.mapper;
 
-import com.pet.po.ImageWall;
-import com.pet.po.ImageWallExample;
+import com.pet.pojo.ImageWall;
+import com.pet.pojo.ImageWallExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
