@@ -2,15 +2,16 @@ package com.pet.mapper;
 
 import com.pet.pojo.Reply;
 import com.pet.pojo.ReplyExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface ReplyMapper {
     int countByExample(ReplyExample example);
 
     int deleteByExample(ReplyExample example);
 
-    int deleteByPrimaryKey(String replyId);
+    int deleteByPrimaryKey(Integer replyId);
 
     int insert(Reply record);
 
@@ -18,7 +19,7 @@ public interface ReplyMapper {
 
     List<Reply> selectByExample(ReplyExample example);
 
-    Reply selectByPrimaryKey(String replyId);
+    Reply selectByPrimaryKey(Integer replyId);
 
     int updateByExampleSelective(@Param("record") Reply record, @Param("example") ReplyExample example);
 

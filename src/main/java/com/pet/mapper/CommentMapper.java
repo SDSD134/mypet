@@ -2,15 +2,16 @@ package com.pet.mapper;
 
 import com.pet.pojo.Comment;
 import com.pet.pojo.CommentExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface CommentMapper {
     int countByExample(CommentExample example);
 
     int deleteByExample(CommentExample example);
 
-    int deleteByPrimaryKey(String commentId);
+    int deleteByPrimaryKey(Integer commentId);
 
     int insert(Comment record);
 
@@ -18,7 +19,7 @@ public interface CommentMapper {
 
     List<Comment> selectByExample(CommentExample example);
 
-    Comment selectByPrimaryKey(String commentId);
+    Comment selectByPrimaryKey(Integer commentId);
 
     int updateByExampleSelective(@Param("record") Comment record, @Param("example") CommentExample example);
 

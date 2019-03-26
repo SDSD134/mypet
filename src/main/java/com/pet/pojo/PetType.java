@@ -3,7 +3,7 @@ package com.pet.pojo;
 import java.util.Date;
 
 public class PetType {
-    private String typeId;
+    private Integer typeId;
 
     private String typeName;
 
@@ -11,12 +11,12 @@ public class PetType {
 
     private Date updateTime;
 
-    public String getTypeId() {
+    public Integer getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(String typeId) {
-        this.typeId = typeId == null ? null : typeId.trim();
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
     }
 
     public String getTypeName() {

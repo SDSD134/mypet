@@ -115,62 +115,52 @@ public class NewsExample {
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdEqualTo(String value) {
+        public Criteria andNewsIdEqualTo(Integer value) {
             addCriterion("news_id =", value, "newsId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdNotEqualTo(String value) {
+        public Criteria andNewsIdNotEqualTo(Integer value) {
             addCriterion("news_id <>", value, "newsId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdGreaterThan(String value) {
+        public Criteria andNewsIdGreaterThan(Integer value) {
             addCriterion("news_id >", value, "newsId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdGreaterThanOrEqualTo(String value) {
+        public Criteria andNewsIdGreaterThanOrEqualTo(Integer value) {
             addCriterion("news_id >=", value, "newsId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdLessThan(String value) {
+        public Criteria andNewsIdLessThan(Integer value) {
             addCriterion("news_id <", value, "newsId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdLessThanOrEqualTo(String value) {
+        public Criteria andNewsIdLessThanOrEqualTo(Integer value) {
             addCriterion("news_id <=", value, "newsId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdLike(String value) {
-            addCriterion("news_id like", value, "newsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andNewsIdNotLike(String value) {
-            addCriterion("news_id not like", value, "newsId");
-            return (Criteria) this;
-        }
-
-        public Criteria andNewsIdIn(List<String> values) {
+        public Criteria andNewsIdIn(List<Integer> values) {
             addCriterion("news_id in", values, "newsId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdNotIn(List<String> values) {
+        public Criteria andNewsIdNotIn(List<Integer> values) {
             addCriterion("news_id not in", values, "newsId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdBetween(String value1, String value2) {
+        public Criteria andNewsIdBetween(Integer value1, Integer value2) {
             addCriterion("news_id between", value1, value2, "newsId");
             return (Criteria) this;
         }
 
-        public Criteria andNewsIdNotBetween(String value1, String value2) {
+        public Criteria andNewsIdNotBetween(Integer value1, Integer value2) {
             addCriterion("news_id not between", value1, value2, "newsId");
             return (Criteria) this;
         }

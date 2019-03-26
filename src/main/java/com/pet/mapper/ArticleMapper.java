@@ -2,15 +2,16 @@ package com.pet.mapper;
 
 import com.pet.pojo.Article;
 import com.pet.pojo.ArticleExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface ArticleMapper {
     int countByExample(ArticleExample example);
 
     int deleteByExample(ArticleExample example);
 
-    int deleteByPrimaryKey(String articleId);
+    int deleteByPrimaryKey(Integer articleId);
 
     int insert(Article record);
 
@@ -20,7 +21,7 @@ public interface ArticleMapper {
 
     List<Article> selectByExample(ArticleExample example);
 
-    Article selectByPrimaryKey(String articleId);
+    Article selectByPrimaryKey(Integer articleId);
 
     int updateByExampleSelective(@Param("record") Article record, @Param("example") ArticleExample example);
 

@@ -3,34 +3,34 @@ package com.pet.pojo;
 import java.util.Date;
 
 public class Reply {
-    private String replyId;
+    private Integer replyId;
 
-    private String commentId;
+    private Integer commentId;
 
     private String repltText;
 
-    private String replyUserId;
+    private Integer replyUserId;
 
-    private String commentUserId;
+    private Integer commentUserId;
 
     private Date creatimeTime;
 
     private Date updateTime;
 
-    public String getReplyId() {
+    public Integer getReplyId() {
         return replyId;
     }
 
-    public void setReplyId(String replyId) {
-        this.replyId = replyId == null ? null : replyId.trim();
+    public void setReplyId(Integer replyId) {
+        this.replyId = replyId;
     }
 
-    public String getCommentId() {
+    public Integer getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(String commentId) {
-        this.commentId = commentId == null ? null : commentId.trim();
+    public void setCommentId(Integer commentId) {
+        this.commentId = commentId;
     }
 
     public String getRepltText() {
@@ -41,20 +41,20 @@ public class Reply {
         this.repltText = repltText == null ? null : repltText.trim();
     }
 
-    public String getReplyUserId() {
+    public Integer getReplyUserId() {
         return replyUserId;
     }
 
-    public void setReplyUserId(String replyUserId) {
-        this.replyUserId = replyUserId == null ? null : replyUserId.trim();
+    public void setReplyUserId(Integer replyUserId) {
+        this.replyUserId = replyUserId;
     }
 
-    public String getCommentUserId() {
+    public Integer getCommentUserId() {
         return commentUserId;
     }
 
-    public void setCommentUserId(String commentUserId) {
-        this.commentUserId = commentUserId == null ? null : commentUserId.trim();
+    public void setCommentUserId(Integer commentUserId) {
+        this.commentUserId = commentUserId;
     }
 
     public Date getCreatimeTime() {

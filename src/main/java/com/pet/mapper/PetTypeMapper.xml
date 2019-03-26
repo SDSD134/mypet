@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pet.mapper.PetTypeMapper" >
   <resultMap id="BaseResultMap" type="com.pet.pojo.PetType" >
-    <id column="type_id" property="typeId" jdbcType="VARCHAR" />
+    <id column="type_id" property="typeId" jdbcType="INTEGER" />
     <result column="type_name" property="typeName" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
@@ -82,15 +82,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from pet_type
-    where type_id = #{typeId,jdbcType=VARCHAR}
+    where type_id = #{typeId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from pet_type
-    where type_id = #{typeId,jdbcType=VARCHAR}
+    where type_id = #{typeId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.pet.pojo.PetTypeExample" >
     delete from pet_type
@@ -101,7 +101,7 @@
   <insert id="insert" parameterType="com.pet.pojo.PetType" >
     insert into pet_type (type_id, type_name, create_time, 
       update_time)
-    values (#{typeId,jdbcType=VARCHAR}, #{typeName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{typeId,jdbcType=INTEGER}, #{typeName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.pet.pojo.PetType" >
@@ -122,7 +122,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="typeId != null" >
-        #{typeId,jdbcType=VARCHAR},
+        #{typeId,jdbcType=INTEGER},
       </if>
       <if test="typeName != null" >
         #{typeName,jdbcType=VARCHAR},
@@ -145,7 +145,7 @@
     update pet_type
     <set >
       <if test="record.typeId != null" >
-        type_id = #{record.typeId,jdbcType=VARCHAR},
+        type_id = #{record.typeId,jdbcType=INTEGER},
       </if>
       <if test="record.typeName != null" >
         type_name = #{record.typeName,jdbcType=VARCHAR},
@@ -163,7 +163,7 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update pet_type
-    set type_id = #{record.typeId,jdbcType=VARCHAR},
+    set type_id = #{record.typeId,jdbcType=INTEGER},
       type_name = #{record.typeName,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP}
@@ -184,13 +184,13 @@
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where type_id = #{typeId,jdbcType=VARCHAR}
+    where type_id = #{typeId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.pet.pojo.PetType" >
     update pet_type
     set type_name = #{typeName,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where type_id = #{typeId,jdbcType=VARCHAR}
+    where type_id = #{typeId,jdbcType=INTEGER}
   </update>
 </mapper>

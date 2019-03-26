@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pet.mapper.ImageWallMapper" >
   <resultMap id="BaseResultMap" type="com.pet.pojo.ImageWall" >
-    <id column="image_id" property="imageId" jdbcType="VARCHAR" />
-    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <id column="image_id" property="imageId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="imamge_url" property="imamgeUrl" jdbcType="VARCHAR" />
     <result column="image_title" property="imageTitle" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
@@ -84,15 +84,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from image_wall
-    where image_id = #{imageId,jdbcType=VARCHAR}
+    where image_id = #{imageId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from image_wall
-    where image_id = #{imageId,jdbcType=VARCHAR}
+    where image_id = #{imageId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.pet.pojo.ImageWallExample" >
     delete from image_wall
@@ -104,7 +104,7 @@
     insert into image_wall (image_id, user_id, imamge_url, 
       image_title, create_time, update_time
       )
-    values (#{imageId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{imamgeUrl,jdbcType=VARCHAR}, 
+    values (#{imageId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{imamgeUrl,jdbcType=VARCHAR}, 
       #{imageTitle,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
@@ -132,10 +132,10 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="imageId != null" >
-        #{imageId,jdbcType=VARCHAR},
+        #{imageId,jdbcType=INTEGER},
       </if>
       <if test="userId != null" >
-        #{userId,jdbcType=VARCHAR},
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="imamgeUrl != null" >
         #{imamgeUrl,jdbcType=VARCHAR},
@@ -161,10 +161,10 @@
     update image_wall
     <set >
       <if test="record.imageId != null" >
-        image_id = #{record.imageId,jdbcType=VARCHAR},
+        image_id = #{record.imageId,jdbcType=INTEGER},
       </if>
       <if test="record.userId != null" >
-        user_id = #{record.userId,jdbcType=VARCHAR},
+        user_id = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.imamgeUrl != null" >
         imamge_url = #{record.imamgeUrl,jdbcType=VARCHAR},
@@ -185,8 +185,8 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update image_wall
-    set image_id = #{record.imageId,jdbcType=VARCHAR},
-      user_id = #{record.userId,jdbcType=VARCHAR},
+    set image_id = #{record.imageId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
       imamge_url = #{record.imamgeUrl,jdbcType=VARCHAR},
       image_title = #{record.imageTitle,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -199,7 +199,7 @@
     update image_wall
     <set >
       <if test="userId != null" >
-        user_id = #{userId,jdbcType=VARCHAR},
+        user_id = #{userId,jdbcType=INTEGER},
       </if>
       <if test="imamgeUrl != null" >
         imamge_url = #{imamgeUrl,jdbcType=VARCHAR},
@@ -214,15 +214,15 @@
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where image_id = #{imageId,jdbcType=VARCHAR}
+    where image_id = #{imageId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.pet.pojo.ImageWall" >
     update image_wall
-    set user_id = #{userId,jdbcType=VARCHAR},
+    set user_id = #{userId,jdbcType=INTEGER},
       imamge_url = #{imamgeUrl,jdbcType=VARCHAR},
       image_title = #{imageTitle,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where image_id = #{imageId,jdbcType=VARCHAR}
+    where image_id = #{imageId,jdbcType=INTEGER}
   </update>
 </mapper>

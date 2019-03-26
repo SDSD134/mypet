@@ -1,16 +1,17 @@
 package com.pet.mapper;
 
-import com.pet.po.User;
-import com.pet.po.UserExample;
-import java.util.List;
+import com.pet.pojo.User;
+import com.pet.pojo.UserExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UserMapper {
     int countByExample(UserExample example);
 
     int deleteByExample(UserExample example);
 
-    int deleteByPrimaryKey(String userId);
+    int deleteByPrimaryKey(Integer userId);
 
     int insert(User record);
 
@@ -18,7 +19,7 @@ public interface UserMapper {
 
     List<User> selectByExample(UserExample example);
 
-    User selectByPrimaryKey(String userId);
+    User selectByPrimaryKey(Integer userId);
 
     int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
 

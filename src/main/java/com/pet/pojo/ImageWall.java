@@ -3,9 +3,9 @@ package com.pet.pojo;
 import java.util.Date;
 
 public class ImageWall {
-    private String imageId;
+    private Integer imageId;
 
-    private String userId;
+    private Integer userId;
 
     private String imamgeUrl;
 
@@ -15,20 +15,20 @@ public class ImageWall {
 
     private Date updateTime;
 
-    public String getImageId() {
+    public Integer getImageId() {
         return imageId;
     }
 
-    public void setImageId(String imageId) {
-        this.imageId = imageId == null ? null : imageId.trim();
+    public void setImageId(Integer imageId) {
+        this.imageId = imageId;
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getImamgeUrl() {

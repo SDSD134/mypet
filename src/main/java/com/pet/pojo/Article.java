@@ -3,11 +3,11 @@ package com.pet.pojo;
 import java.util.Date;
 
 public class Article {
-    private String articleId;
+    private Integer articleId;
 
     private Integer artcleType;
 
-    private String userId;
+    private Integer userId;
 
     private String articleImage;
 
@@ -17,12 +17,12 @@ public class Article {
 
     private String articleText;
 
-    public String getArticleId() {
+    public Integer getArticleId() {
         return articleId;
     }
 
-    public void setArticleId(String articleId) {
-        this.articleId = articleId == null ? null : articleId.trim();
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
     }
 
     public Integer getArtcleType() {
@@ -33,12 +33,12 @@ public class Article {
         this.artcleType = artcleType;
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getArticleImage() {

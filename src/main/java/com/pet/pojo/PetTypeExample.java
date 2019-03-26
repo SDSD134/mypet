@@ -115,62 +115,52 @@ public class PetTypeExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdEqualTo(String value) {
+        public Criteria andTypeIdEqualTo(Integer value) {
             addCriterion("type_id =", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdNotEqualTo(String value) {
+        public Criteria andTypeIdNotEqualTo(Integer value) {
             addCriterion("type_id <>", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdGreaterThan(String value) {
+        public Criteria andTypeIdGreaterThan(Integer value) {
             addCriterion("type_id >", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdGreaterThanOrEqualTo(String value) {
+        public Criteria andTypeIdGreaterThanOrEqualTo(Integer value) {
             addCriterion("type_id >=", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdLessThan(String value) {
+        public Criteria andTypeIdLessThan(Integer value) {
             addCriterion("type_id <", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdLessThanOrEqualTo(String value) {
+        public Criteria andTypeIdLessThanOrEqualTo(Integer value) {
             addCriterion("type_id <=", value, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdLike(String value) {
-            addCriterion("type_id like", value, "typeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeIdNotLike(String value) {
-            addCriterion("type_id not like", value, "typeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeIdIn(List<String> values) {
+        public Criteria andTypeIdIn(List<Integer> values) {
             addCriterion("type_id in", values, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdNotIn(List<String> values) {
+        public Criteria andTypeIdNotIn(List<Integer> values) {
             addCriterion("type_id not in", values, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdBetween(String value1, String value2) {
+        public Criteria andTypeIdBetween(Integer value1, Integer value2) {
             addCriterion("type_id between", value1, value2, "typeId");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIdNotBetween(String value1, String value2) {
+        public Criteria andTypeIdNotBetween(Integer value1, Integer value2) {
             addCriterion("type_id not between", value1, value2, "typeId");
             return (Criteria) this;
         }

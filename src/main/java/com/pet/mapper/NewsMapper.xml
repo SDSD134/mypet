@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pet.mapper.NewsMapper" >
   <resultMap id="BaseResultMap" type="com.pet.pojo.News" >
-    <result column="news_id" property="newsId" jdbcType="VARCHAR" />
+    <id column="news_id" property="newsId" jdbcType="INTEGER" />
     <result column="news_title" property="newsTitle" jdbcType="VARCHAR" />
     <result column="news_descriprion" property="newsDescriprion" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
@@ -105,6 +105,18 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from news
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from news
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </delete>
   <delete id="deleteByExample" parameterType="com.pet.pojo.NewsExample" >
     delete from news
     <if test="_parameter != null" >
@@ -115,7 +127,7 @@
     insert into news (news_id, news_title, news_descriprion, 
       create_time, update_time, news_text
       )
-    values (#{newsId,jdbcType=VARCHAR}, #{newsTitle,jdbcType=VARCHAR}, #{newsDescriprion,jdbcType=VARCHAR}, 
+    values (#{newsId,jdbcType=INTEGER}, #{newsTitle,jdbcType=VARCHAR}, #{newsDescriprion,jdbcType=VARCHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{newsText,jdbcType=LONGVARCHAR}
       )
   </insert>
@@ -143,7 +155,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="newsId != null" >
-        #{newsId,jdbcType=VARCHAR},
+        #{newsId,jdbcType=INTEGER},
       </if>
       <if test="newsTitle != null" >
         #{newsTitle,jdbcType=VARCHAR},
@@ -172,7 +184,7 @@
     update news
     <set >
       <if test="record.newsId != null" >
-        news_id = #{record.newsId,jdbcType=VARCHAR},
+        news_id = #{record.newsId,jdbcType=INTEGER},
       </if>
       <if test="record.newsTitle != null" >
         news_title = #{record.newsTitle,jdbcType=VARCHAR},
@@ -196,7 +208,7 @@
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map" >
     update news
-    set news_id = #{record.newsId,jdbcType=VARCHAR},
+    set news_id = #{record.newsId,jdbcType=INTEGER},
       news_title = #{record.newsTitle,jdbcType=VARCHAR},
       news_descriprion = #{record.newsDescriprion,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -208,7 +220,7 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update news
-    set news_id = #{record.newsId,jdbcType=VARCHAR},
+    set news_id = #{record.newsId,jdbcType=INTEGER},
       news_title = #{record.newsTitle,jdbcType=VARCHAR},
       news_descriprion = #{record.newsDescriprion,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -216,5 +228,43 @@
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pet.pojo.News" >
+    update news
+    <set >
+      <if test="newsTitle != null" >
+        news_title = #{newsTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="newsDescriprion != null" >
+        news_descriprion = #{newsDescriprion,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newsText != null" >
+        news_text = #{newsText,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pet.pojo.News" >
+    update news
+    set news_title = #{newsTitle,jdbcType=VARCHAR},
+      news_descriprion = #{newsDescriprion,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      news_text = #{newsText,jdbcType=LONGVARCHAR}
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pet.pojo.News" >
+    update news
+    set news_title = #{newsTitle,jdbcType=VARCHAR},
+      news_descriprion = #{newsDescriprion,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where news_id = #{newsId,jdbcType=INTEGER}
   </update>
 </mapper>

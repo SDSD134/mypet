@@ -3,7 +3,7 @@ package com.pet.pojo;
 import java.util.Date;
 
 public class News {
-    private String newsId;
+    private Integer newsId;
 
     private String newsTitle;
 
@@ -15,12 +15,12 @@ public class News {
 
     private String newsText;
 
-    public String getNewsId() {
+    public Integer getNewsId() {
         return newsId;
     }
 
-    public void setNewsId(String newsId) {
-        this.newsId = newsId == null ? null : newsId.trim();
+    public void setNewsId(Integer newsId) {
+        this.newsId = newsId;
     }
 
     public String getNewsTitle() {

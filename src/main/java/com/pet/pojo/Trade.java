@@ -3,7 +3,7 @@ package com.pet.pojo;
 import java.util.Date;
 
 public class Trade {
-    private String tradeId;
+    private Integer tradeId;
 
     private String tradePrice;
 
@@ -19,18 +19,18 @@ public class Trade {
 
     private String traeAddress;
 
-    private String userId;
+    private Integer userId;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public String getTradeId() {
+    public Integer getTradeId() {
         return tradeId;
     }
 
-    public void setTradeId(String tradeId) {
-        this.tradeId = tradeId == null ? null : tradeId.trim();
+    public void setTradeId(Integer tradeId) {
+        this.tradeId = tradeId;
     }
 
     public String getTradePrice() {
@@ -89,12 +89,12 @@ public class Trade {
         this.traeAddress = traeAddress == null ? null : traeAddress.trim();
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getCreateTime() {

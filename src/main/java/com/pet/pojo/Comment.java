@@ -3,32 +3,32 @@ package com.pet.pojo;
 import java.util.Date;
 
 public class Comment {
-    private String commentId;
+    private Integer commentId;
 
-    private String articleId;
+    private Integer articleId;
 
     private String commentText;
 
-    private String userId;
+    private Integer userId;
 
     private Date createTime;
 
     private Date updateTime;
 
-    public String getCommentId() {
+    public Integer getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(String commentId) {
-        this.commentId = commentId == null ? null : commentId.trim();
+    public void setCommentId(Integer commentId) {
+        this.commentId = commentId;
     }
 
-    public String getArticleId() {
+    public Integer getArticleId() {
         return articleId;
     }
 
-    public void setArticleId(String articleId) {
-        this.articleId = articleId == null ? null : articleId.trim();
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
     }
 
     public String getCommentText() {
@@ -39,12 +39,12 @@ public class Comment {
         this.commentText = commentText == null ? null : commentText.trim();
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getCreateTime() {

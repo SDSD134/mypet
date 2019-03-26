@@ -3,7 +3,7 @@ package com.pet.pojo;
 import java.util.Date;
 
 public class User {
-    private String userId;
+    private Integer userId;
 
     private String userName;
 
@@ -17,12 +17,12 @@ public class User {
 
     private Date updateTime;
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {

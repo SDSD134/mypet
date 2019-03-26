@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pet.mapper.ReplyMapper" >
   <resultMap id="BaseResultMap" type="com.pet.pojo.Reply" >
-    <id column="reply_id" property="replyId" jdbcType="VARCHAR" />
-    <result column="comment_id" property="commentId" jdbcType="VARCHAR" />
+    <id column="reply_id" property="replyId" jdbcType="INTEGER" />
+    <result column="comment_id" property="commentId" jdbcType="INTEGER" />
     <result column="replt_text" property="repltText" jdbcType="VARCHAR" />
-    <result column="reply_user_id" property="replyUserId" jdbcType="VARCHAR" />
-    <result column="comment_user_id" property="commentUserId" jdbcType="VARCHAR" />
+    <result column="reply_user_id" property="replyUserId" jdbcType="INTEGER" />
+    <result column="comment_user_id" property="commentUserId" jdbcType="INTEGER" />
     <result column="creatime_time" property="creatimeTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -86,15 +86,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from reply
-    where reply_id = #{replyId,jdbcType=VARCHAR}
+    where reply_id = #{replyId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from reply
-    where reply_id = #{replyId,jdbcType=VARCHAR}
+    where reply_id = #{replyId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.pet.pojo.ReplyExample" >
     delete from reply
@@ -106,8 +106,8 @@
     insert into reply (reply_id, comment_id, replt_text, 
       reply_user_id, comment_user_id, creatime_time, 
       update_time)
-    values (#{replyId,jdbcType=VARCHAR}, #{commentId,jdbcType=VARCHAR}, #{repltText,jdbcType=VARCHAR}, 
-      #{replyUserId,jdbcType=VARCHAR}, #{commentUserId,jdbcType=VARCHAR}, #{creatimeTime,jdbcType=TIMESTAMP}, 
+    values (#{replyId,jdbcType=INTEGER}, #{commentId,jdbcType=INTEGER}, #{repltText,jdbcType=VARCHAR}, 
+      #{replyUserId,jdbcType=INTEGER}, #{commentUserId,jdbcType=INTEGER}, #{creatimeTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.pet.pojo.Reply" >
@@ -137,19 +137,19 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="replyId != null" >
-        #{replyId,jdbcType=VARCHAR},
+        #{replyId,jdbcType=INTEGER},
       </if>
       <if test="commentId != null" >
-        #{commentId,jdbcType=VARCHAR},
+        #{commentId,jdbcType=INTEGER},
       </if>
       <if test="repltText != null" >
         #{repltText,jdbcType=VARCHAR},
       </if>
       <if test="replyUserId != null" >
-        #{replyUserId,jdbcType=VARCHAR},
+        #{replyUserId,jdbcType=INTEGER},
       </if>
       <if test="commentUserId != null" >
-        #{commentUserId,jdbcType=VARCHAR},
+        #{commentUserId,jdbcType=INTEGER},
       </if>
       <if test="creatimeTime != null" >
         #{creatimeTime,jdbcType=TIMESTAMP},
@@ -169,19 +169,19 @@
     update reply
     <set >
       <if test="record.replyId != null" >
-        reply_id = #{record.replyId,jdbcType=VARCHAR},
+        reply_id = #{record.replyId,jdbcType=INTEGER},
       </if>
       <if test="record.commentId != null" >
-        comment_id = #{record.commentId,jdbcType=VARCHAR},
+        comment_id = #{record.commentId,jdbcType=INTEGER},
       </if>
       <if test="record.repltText != null" >
         replt_text = #{record.repltText,jdbcType=VARCHAR},
       </if>
       <if test="record.replyUserId != null" >
-        reply_user_id = #{record.replyUserId,jdbcType=VARCHAR},
+        reply_user_id = #{record.replyUserId,jdbcType=INTEGER},
       </if>
       <if test="record.commentUserId != null" >
-        comment_user_id = #{record.commentUserId,jdbcType=VARCHAR},
+        comment_user_id = #{record.commentUserId,jdbcType=INTEGER},
       </if>
       <if test="record.creatimeTime != null" >
         creatime_time = #{record.creatimeTime,jdbcType=TIMESTAMP},
@@ -196,11 +196,11 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update reply
-    set reply_id = #{record.replyId,jdbcType=VARCHAR},
-      comment_id = #{record.commentId,jdbcType=VARCHAR},
+    set reply_id = #{record.replyId,jdbcType=INTEGER},
+      comment_id = #{record.commentId,jdbcType=INTEGER},
       replt_text = #{record.repltText,jdbcType=VARCHAR},
-      reply_user_id = #{record.replyUserId,jdbcType=VARCHAR},
-      comment_user_id = #{record.commentUserId,jdbcType=VARCHAR},
+      reply_user_id = #{record.replyUserId,jdbcType=INTEGER},
+      comment_user_id = #{record.commentUserId,jdbcType=INTEGER},
       creatime_time = #{record.creatimeTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
@@ -211,16 +211,16 @@
     update reply
     <set >
       <if test="commentId != null" >
-        comment_id = #{commentId,jdbcType=VARCHAR},
+        comment_id = #{commentId,jdbcType=INTEGER},
       </if>
       <if test="repltText != null" >
         replt_text = #{repltText,jdbcType=VARCHAR},
       </if>
       <if test="replyUserId != null" >
-        reply_user_id = #{replyUserId,jdbcType=VARCHAR},
+        reply_user_id = #{replyUserId,jdbcType=INTEGER},
       </if>
       <if test="commentUserId != null" >
-        comment_user_id = #{commentUserId,jdbcType=VARCHAR},
+        comment_user_id = #{commentUserId,jdbcType=INTEGER},
       </if>
       <if test="creatimeTime != null" >
         creatime_time = #{creatimeTime,jdbcType=TIMESTAMP},
@@ -229,16 +229,16 @@
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where reply_id = #{replyId,jdbcType=VARCHAR}
+    where reply_id = #{replyId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.pet.pojo.Reply" >
     update reply
-    set comment_id = #{commentId,jdbcType=VARCHAR},
+    set comment_id = #{commentId,jdbcType=INTEGER},
       replt_text = #{repltText,jdbcType=VARCHAR},
-      reply_user_id = #{replyUserId,jdbcType=VARCHAR},
-      comment_user_id = #{commentUserId,jdbcType=VARCHAR},
+      reply_user_id = #{replyUserId,jdbcType=INTEGER},
+      comment_user_id = #{commentUserId,jdbcType=INTEGER},
       creatime_time = #{creatimeTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where reply_id = #{replyId,jdbcType=VARCHAR}
+    where reply_id = #{replyId,jdbcType=INTEGER}
   </update>
 </mapper>

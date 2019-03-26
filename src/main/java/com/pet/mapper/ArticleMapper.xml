@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.pet.mapper.ArticleMapper" >
   <resultMap id="BaseResultMap" type="com.pet.pojo.Article" >
-    <id column="article_id" property="articleId" jdbcType="VARCHAR" />
+    <id column="article_id" property="articleId" jdbcType="INTEGER" />
     <result column="artcle_type" property="artcleType" jdbcType="INTEGER" />
-    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="article_image" property="articleImage" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
@@ -106,17 +106,17 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from article
-    where article_id = #{articleId,jdbcType=VARCHAR}
+    where article_id = #{articleId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article
-    where article_id = #{articleId,jdbcType=VARCHAR}
+    where article_id = #{articleId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.pet.pojo.ArticleExample" >
     delete from article
@@ -128,7 +128,7 @@
     insert into article (article_id, artcle_type, user_id, 
       article_image, create_time, update_time, 
       article_text)
-    values (#{articleId,jdbcType=VARCHAR}, #{artcleType,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, 
+    values (#{articleId,jdbcType=INTEGER}, #{artcleType,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
       #{articleImage,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{articleText,jdbcType=LONGVARCHAR})
   </insert>
@@ -159,13 +159,13 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="articleId != null" >
-        #{articleId,jdbcType=VARCHAR},
+        #{articleId,jdbcType=INTEGER},
       </if>
       <if test="artcleType != null" >
         #{artcleType,jdbcType=INTEGER},
       </if>
       <if test="userId != null" >
-        #{userId,jdbcType=VARCHAR},
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="articleImage != null" >
         #{articleImage,jdbcType=VARCHAR},
@@ -191,13 +191,13 @@
     update article
     <set >
       <if test="record.articleId != null" >
-        article_id = #{record.articleId,jdbcType=VARCHAR},
+        article_id = #{record.articleId,jdbcType=INTEGER},
       </if>
       <if test="record.artcleType != null" >
         artcle_type = #{record.artcleType,jdbcType=INTEGER},
       </if>
       <if test="record.userId != null" >
-        user_id = #{record.userId,jdbcType=VARCHAR},
+        user_id = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.articleImage != null" >
         article_image = #{record.articleImage,jdbcType=VARCHAR},
@@ -218,9 +218,9 @@
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map" >
     update article
-    set article_id = #{record.articleId,jdbcType=VARCHAR},
+    set article_id = #{record.articleId,jdbcType=INTEGER},
       artcle_type = #{record.artcleType,jdbcType=INTEGER},
-      user_id = #{record.userId,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=INTEGER},
       article_image = #{record.articleImage,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
@@ -231,9 +231,9 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update article
-    set article_id = #{record.articleId,jdbcType=VARCHAR},
+    set article_id = #{record.articleId,jdbcType=INTEGER},
       artcle_type = #{record.artcleType,jdbcType=INTEGER},
-      user_id = #{record.userId,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=INTEGER},
       article_image = #{record.articleImage,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP}
@@ -248,7 +248,7 @@
         artcle_type = #{artcleType,jdbcType=INTEGER},
       </if>
       <if test="userId != null" >
-        user_id = #{userId,jdbcType=VARCHAR},
+        user_id = #{userId,jdbcType=INTEGER},
       </if>
       <if test="articleImage != null" >
         article_image = #{articleImage,jdbcType=VARCHAR},
@@ -263,25 +263,25 @@
         article_text = #{articleText,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    where article_id = #{articleId,jdbcType=VARCHAR}
+    where article_id = #{articleId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pet.pojo.Article" >
     update article
     set artcle_type = #{artcleType,jdbcType=INTEGER},
-      user_id = #{userId,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
       article_image = #{articleImage,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       article_text = #{articleText,jdbcType=LONGVARCHAR}
-    where article_id = #{articleId,jdbcType=VARCHAR}
+    where article_id = #{articleId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.pet.pojo.Article" >
     update article
     set artcle_type = #{artcleType,jdbcType=INTEGER},
-      user_id = #{userId,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
       article_image = #{articleImage,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where article_id = #{articleId,jdbcType=VARCHAR}
+    where article_id = #{articleId,jdbcType=INTEGER}
   </update>
 </mapper>

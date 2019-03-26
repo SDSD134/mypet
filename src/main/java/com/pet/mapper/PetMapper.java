@@ -2,15 +2,16 @@ package com.pet.mapper;
 
 import com.pet.pojo.Pet;
 import com.pet.pojo.PetExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface PetMapper {
     int countByExample(PetExample example);
 
     int deleteByExample(PetExample example);
 
-    int deleteByPrimaryKey(String petId);
+    int deleteByPrimaryKey(Integer petId);
 
     int insert(Pet record);
 
@@ -18,7 +19,7 @@ public interface PetMapper {
 
     List<Pet> selectByExample(PetExample example);
 
-    Pet selectByPrimaryKey(String petId);
+    Pet selectByPrimaryKey(Integer petId);
 
     int updateByExampleSelective(@Param("record") Pet record, @Param("example") PetExample example);
 
