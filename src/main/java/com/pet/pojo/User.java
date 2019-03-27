@@ -17,6 +17,8 @@ public class User {
 
     private Date updateTime;
 
+    private Integer userSex;
+
     public Integer getUserId() {
         return userId;
     }
@@ -71,5 +73,13 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Integer getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(Integer userSex) {
+        this.userSex = userSex;
     }
 }

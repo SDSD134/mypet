@@ -11,8 +11,8 @@ import java.io.Serializable;
 //保证序列化json的时候,如果是null的对象,key也会消失
 public class ServerResponse<T> implements Serializable {
 
-    private int status;
-    private String msg;
+    private int status;   //接口调用状态码
+    private String msg;   //接口需要相应的消息
     private T data;  //泛型返回值
 
     //私有构造方法  外部不能new  开放供外部使用的public方法
