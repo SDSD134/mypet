@@ -6,12 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mypet" />
+        <module name="mypet-parent" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mypet" target="1.8" />
-      <module name="mypetparent" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>

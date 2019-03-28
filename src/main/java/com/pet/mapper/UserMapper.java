@@ -28,4 +28,8 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+//************
+    int checkUsername(String userName);
+
+    User selectLogin(@Param("userName") String userName,@Param("userPwd") String userPwd);
 }

@@ -255,4 +255,16 @@
       user_sex = #{userSex,jdbcType=INTEGER}
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
+
+  <select id="checkUsername" resultType="int" parameterType="string">
+    select count(1) from user
+    where user_name = #{userName}
+  </select>
+  <select id="selectLogin" resultMap="BaseResultMap" parameterType="map">
+    select
+    <include refid="Base_Column_List"/>
+    from user
+    where user_name = #{userName}
+    and user_pwd = #{userPwd}
+  </select>
 </mapper>
