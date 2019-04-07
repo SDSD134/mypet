@@ -3,7 +3,7 @@
 <mapper namespace="com.pet.mapper.ArticleMapper" >
   <resultMap id="BaseResultMap" type="com.pet.pojo.Article" >
     <id column="article_id" property="articleId" jdbcType="INTEGER" />
-    <result column="article_type" property="articleType" jdbcType="INTEGER" />
+    <result column="artcle_type" property="artcleType" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="article_image" property="articleImage" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
@@ -71,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    article_id, article_type, user_id, article_image, create_time, update_time
+    article_id, artcle_type, user_id, article_image, create_time, update_time
   </sql>
   <sql id="Blob_Column_List" >
     article_text
@@ -125,10 +125,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.pet.pojo.Article" >
-    insert into article (article_id, article_type, user_id, 
+    insert into article (article_id, artcle_type, user_id, 
       article_image, create_time, update_time, 
       article_text)
-    values (#{articleId,jdbcType=INTEGER}, #{articleType,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+    values (#{articleId,jdbcType=INTEGER}, #{artcleType,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
       #{articleImage,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{articleText,jdbcType=LONGVARCHAR})
   </insert>
@@ -138,8 +138,8 @@
       <if test="articleId != null" >
         article_id,
       </if>
-      <if test="articleType != null" >
-        article_type,
+      <if test="artcleType != null" >
+        artcle_type,
       </if>
       <if test="userId != null" >
         user_id,
@@ -161,8 +161,8 @@
       <if test="articleId != null" >
         #{articleId,jdbcType=INTEGER},
       </if>
-      <if test="articleType != null" >
-        #{articleType,jdbcType=INTEGER},
+      <if test="artcleType != null" >
+        #{artcleType,jdbcType=INTEGER},
       </if>
       <if test="userId != null" >
         #{userId,jdbcType=INTEGER},
@@ -193,8 +193,8 @@
       <if test="record.articleId != null" >
         article_id = #{record.articleId,jdbcType=INTEGER},
       </if>
-      <if test="record.articleType != null" >
-        article_type = #{record.articleType,jdbcType=INTEGER},
+      <if test="record.artcleType != null" >
+        artcle_type = #{record.artcleType,jdbcType=INTEGER},
       </if>
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=INTEGER},
@@ -219,7 +219,7 @@
   <update id="updateByExampleWithBLOBs" parameterType="map" >
     update article
     set article_id = #{record.articleId,jdbcType=INTEGER},
-      article_type = #{record.articleType,jdbcType=INTEGER},
+      artcle_type = #{record.artcleType,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
       article_image = #{record.articleImage,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -232,7 +232,7 @@
   <update id="updateByExample" parameterType="map" >
     update article
     set article_id = #{record.articleId,jdbcType=INTEGER},
-      article_type = #{record.articleType,jdbcType=INTEGER},
+      artcle_type = #{record.artcleType,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
       article_image = #{record.articleImage,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -244,8 +244,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.pet.pojo.Article" >
     update article
     <set >
-      <if test="articleType != null" >
-        article_type = #{articleType,jdbcType=INTEGER},
+      <if test="artcleType != null" >
+        artcle_type = #{artcleType,jdbcType=INTEGER},
       </if>
       <if test="userId != null" >
         user_id = #{userId,jdbcType=INTEGER},
@@ -267,7 +267,7 @@
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pet.pojo.Article" >
     update article
-    set article_type = #{articleType,jdbcType=INTEGER},
+    set artcle_type = #{artcleType,jdbcType=INTEGER},
       user_id = #{userId,jdbcType=INTEGER},
       article_image = #{articleImage,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -277,7 +277,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.pet.pojo.Article" >
     update article
-    set article_type = #{articleType,jdbcType=INTEGER},
+    set artcle_type = #{artcleType,jdbcType=INTEGER},
       user_id = #{userId,jdbcType=INTEGER},
       article_image = #{articleImage,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},

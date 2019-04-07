@@ -1,25 +1,19 @@
 package com.pet.common;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiParam;
-import org.apache.ibatis.annotations.Param;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.Serializable;
 /**
  * Created by geely
  */
-
+@JsonSerialize(include =  JsonSerialize.Inclusion.NON_NULL)
 //保证序列化json的时候,如果是null的对象,key也会消失
-@ApiModel(value = "ServerResponse",description ="返回数据与调用状态及调用接口消息" )
 public class ServerResponse<T> implements Serializable {
 
-    @ApiParam(name="status",value="接口调用状态码")
     private int status;   //接口调用状态码
-    @ApiParam(name="msg",value="接口调用后返回的消息")
     private String msg;   //接口需要相应的消息
-    @ApiParam(name="data",value = "接口调用后返回的数据")
     private T data;  //泛型返回值
-
 
     //私有构造方法  外部不能new  开放供外部使用的public方法
     private ServerResponse(int status){
@@ -43,7 +37,7 @@ public class ServerResponse<T> implements Serializable {
         this.msg = msg;
     }
 
-
+    @JsonIgnore
     //使之不在json序列化结果当中
     public boolean isSuccess(){
         return this.status == ResponseCode.SUCCESS.getCode();
@@ -91,20 +85,6 @@ public class ServerResponse<T> implements Serializable {
         return new ServerResponse<T>(errorCode,errorMessage);
     }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
 }
 

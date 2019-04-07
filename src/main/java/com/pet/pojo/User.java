@@ -36,7 +36,7 @@ public class User {
     }
 
     public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+        this.userName = userName;
     }
 
     public Integer getUserRole() {
@@ -52,7 +52,7 @@ public class User {
     }
 
     public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone == null ? null : userPhone.trim();
+        this.userPhone = userPhone;
     }
 
     public String getUserPwd() {
@@ -60,7 +60,7 @@ public class User {
     }
 
     public void setUserPwd(String userPwd) {
-        this.userPwd = userPwd == null ? null : userPwd.trim();
+        this.userPwd = userPwd;
     }
 
     public Date getCreateTime() {
@@ -92,7 +92,7 @@ public class User {
     }
 
     public void setQuestion(String question) {
-        this.question = question == null ? null : question.trim();
+        this.question = question;
     }
 
     public String getAnswer() {
@@ -100,6 +100,6 @@ public class User {
     }
 
     public void setAnswer(String answer) {
-        this.answer = answer == null ? null : answer.trim();
+        this.answer = answer;
     }
 }

@@ -10,8 +10,6 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="user_sex" property="userSex" jdbcType="INTEGER" />
-    <result column="question" property="question" jdbcType="VARCHAR" />
-    <result column="answer" property="answer" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -72,8 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    user_id, user_name, user_role, user_phone, user_pwd, create_time, update_time, user_sex, 
-    question, answer
+    user_id, user_name, user_role, user_phone, user_pwd, create_time, update_time, user_sex
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pet.pojo.UserExample" >
     select
@@ -108,12 +105,10 @@
   <insert id="insert" parameterType="com.pet.pojo.User" >
     insert into user (user_id, user_name, user_role, 
       user_phone, user_pwd, create_time, 
-      update_time, user_sex, question, 
-      answer)
+      update_time, user_sex, question, answer)
     values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userRole,jdbcType=INTEGER}, 
       #{userPhone,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{userSex,jdbcType=INTEGER}, #{question,jdbcType=VARCHAR}, 
-      #{answer,jdbcType=VARCHAR})
+      #{updateTime,jdbcType=TIMESTAMP}, #{userSex,jdbcType=INTEGER},#{question,jdbcType=VARCHAR},#{answer,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.pet.pojo.User" >
     insert into user
@@ -142,12 +137,6 @@
       <if test="userSex != null" >
         user_sex,
       </if>
-      <if test="question != null" >
-        question,
-      </if>
-      <if test="answer != null" >
-        answer,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -173,12 +162,6 @@
       </if>
       <if test="userSex != null" >
         #{userSex,jdbcType=INTEGER},
-      </if>
-      <if test="question != null" >
-        #{question,jdbcType=VARCHAR},
-      </if>
-      <if test="answer != null" >
-        #{answer,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -215,12 +198,6 @@
       <if test="record.userSex != null" >
         user_sex = #{record.userSex,jdbcType=INTEGER},
       </if>
-      <if test="record.question != null" >
-        question = #{record.question,jdbcType=VARCHAR},
-      </if>
-      <if test="record.answer != null" >
-        answer = #{record.answer,jdbcType=VARCHAR},
-      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -235,9 +212,7 @@
       user_pwd = #{record.userPwd,jdbcType=VARCHAR},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      user_sex = #{record.userSex,jdbcType=INTEGER},
-      question = #{record.question,jdbcType=VARCHAR},
-      answer = #{record.answer,jdbcType=VARCHAR}
+      user_sex = #{record.userSex,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -266,12 +241,6 @@
       <if test="userSex != null" >
         user_sex = #{userSex,jdbcType=INTEGER},
       </if>
-      <if test="question != null" >
-        question = #{question,jdbcType=VARCHAR},
-      </if>
-      <if test="answer != null" >
-        answer = #{answer,jdbcType=VARCHAR},
-      </if>
     </set>
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
@@ -283,9 +252,7 @@
       user_pwd = #{userPwd,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      user_sex = #{userSex,jdbcType=INTEGER},
-      question = #{question,jdbcType=VARCHAR},
-      answer = #{answer,jdbcType=VARCHAR}
+      user_sex = #{userSex,jdbcType=INTEGER}
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
 
@@ -299,5 +266,13 @@
     from user
     where user_name = #{userName}
     and user_pwd = #{userPwd}
+  </select>
+  <select id="selectQuestionByUsername" resultType="string" parameterType="string">
+    select question from user where user_name = #{userName}
+  </select>
+  <select id="checkAnswer" resultType="int" parameterType="map">
+    select count(1) from user where user_name=#{userName}
+    and question = #{question}
+    and answer = #{answer}
   </select>
 </mapper>
