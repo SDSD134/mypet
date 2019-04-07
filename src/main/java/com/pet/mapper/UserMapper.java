@@ -32,4 +32,8 @@ public interface UserMapper {
     int checkUsername(String userName);
 
     User selectLogin(@Param("userName") String userName,@Param("userPwd") String userPwd);
+
+    String selectQuestionByUsername(String username);
+
+    int checkAnswer(String userName, String question, String answer);
 }
