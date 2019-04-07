@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CommunityServiceImpl implements CommunityService {
@@ -22,20 +24,27 @@ public class CommunityServiceImpl implements CommunityService {
 
 sssssssssssssssssssssssssssssssss;
 
-    /*private ServerResponse<String> writeArticle( String username, Article article,
+    private ServerResponse<String> writeArticle( String username, Article article,
                                         HttpSession session) {
         Integer count = userVoMapper.checkUserName(username);
+
+        List a = new ArrayList();
+
         if (count == null) {
             return ServerResponse.createByErrorMessage("没有这个用户");
         }
-        User user = userVoMapper.selectByUserName(username);
+
+
+
+    }
+
+/*    User user = userVoMapper.selectByUserName(username);
         article.setUserId(user.getUserId());
-        Integer result =articleMapper.insert(article);
+    Integer result =articleMapper.insert(article);
         if (result ==null) {
-            return ServerResponse.createByErrorMessage("创建帖子失败");
-        }
-        return ServerResponse.createBySuccessMessage("创建成功");
-    }*/
+        return ServerResponse.createByErrorMessage("创建帖子失败");
+    }
+        return ServerResponse.createBySuccessMessage("创建成功");*/
 
     @Override
     public ServerResponse<String> writeArticle(String username, Article article, HttpSession session) {
