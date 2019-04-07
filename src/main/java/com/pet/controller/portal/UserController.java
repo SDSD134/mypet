@@ -48,4 +48,29 @@ public class UserController {
     public ServerResponse<String> checkValid(String userName){
         return userService.checkValid(userName);
     }
+
+    //获取登录用户信息
+    @RequestMapping(value = "get_user_info.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<User> getUserInfo(HttpSession session){
+        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        if(user != null){
+            return ServerResponse.createBySuccess(user);
+        }
+        return ServerResponse.createByErrorMessage("用户未登录,无法获取当前用户的信息");
+    }
+    //密码提示问题的获取
+    @RequestMapping(value = "forget_get_question.do",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> forgetGetQuestion(String userName){
+        return userService.selectQuestion(userName);
+    }
+
+    //答案
+    @RequestMapping(value = "forget_check_answer",method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> forgetCheckAnswer(String userName,String question,String answer){
+        return userService.checkAnswer(userName,question,answer);
+    }
+
 }

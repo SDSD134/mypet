@@ -10,4 +10,8 @@ public interface UserService {
     ServerResponse<String> register(User user);
 
     ServerResponse<String> checkValid(String userName);
+
+    ServerResponse selectQuestion(String userName);
+
+    ServerResponse<String> checkAnswer(String userName, String question, String answer);
 }

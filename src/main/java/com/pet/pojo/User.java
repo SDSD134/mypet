@@ -19,6 +19,10 @@ public class User {
 
     private Integer userSex;
 
+    private String question;
+
+    private String answer;
+
     public Integer getUserId() {
         return userId;
     }
@@ -32,7 +36,7 @@ public class User {
     }
 
     public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+        this.userName = userName;
     }
 
     public Integer getUserRole() {
@@ -48,7 +52,7 @@ public class User {
     }
 
     public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone == null ? null : userPhone.trim();
+        this.userPhone = userPhone;
     }
 
     public String getUserPwd() {
@@ -56,7 +60,7 @@ public class User {
     }
 
     public void setUserPwd(String userPwd) {
-        this.userPwd = userPwd == null ? null : userPwd.trim();
+        this.userPwd = userPwd;
     }
 
     public Date getCreateTime() {
@@ -81,5 +85,21 @@ public class User {
 
     public void setUserSex(Integer userSex) {
         this.userSex = userSex;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }

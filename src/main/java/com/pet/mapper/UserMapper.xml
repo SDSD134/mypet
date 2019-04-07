@@ -105,10 +105,10 @@
   <insert id="insert" parameterType="com.pet.pojo.User" >
     insert into user (user_id, user_name, user_role, 
       user_phone, user_pwd, create_time, 
-      update_time, user_sex)
+      update_time, user_sex, question, answer)
     values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userRole,jdbcType=INTEGER}, 
       #{userPhone,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{userSex,jdbcType=INTEGER})
+      #{updateTime,jdbcType=TIMESTAMP}, #{userSex,jdbcType=INTEGER},#{question,jdbcType=VARCHAR},#{answer,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.pet.pojo.User" >
     insert into user
@@ -266,5 +266,13 @@
     from user
     where user_name = #{userName}
     and user_pwd = #{userPwd}
+  </select>
+  <select id="selectQuestionByUsername" resultType="string" parameterType="string">
+    select question from user where user_name = #{userName}
+  </select>
+  <select id="checkAnswer" resultType="int" parameterType="map">
+    select count(1) from user where user_name=#{userName}
+    and question = #{question}
+    and answer = #{answer}
   </select>
 </mapper>

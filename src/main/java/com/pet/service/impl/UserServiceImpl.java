@@ -54,10 +54,25 @@ public class UserServiceImpl implements UserService {
             return ServerResponse.createByErrorMessage("参数错误");
         }
         return ServerResponse.createBySuccess("校验成功");
-
-
     }
 
+    public ServerResponse selectQuestion(String userName){
+        ServerResponse validResponse = this.checkValid(userName);
+        if (validResponse.isSuccess()){
+            return ServerResponse.createByErrorMessage("用户不存在");
+        }
+        String question = userMapper.selectQuestionByUsername(userName);
+        if (org.apache.commons.lang3.StringUtils.isNotBlank(question)){
+            return ServerResponse.createBySuccess(question);
+        }
+        return ServerResponse.createByErrorMessage("找回密码的问题是空的");
+    }
+
+
+    public ServerResponse<String> checkAnswer(String userName, String question, String answer) {
+        int resultCount = userMapper.checkAnswer(userName, question, answer);
+        return null;
+    }
 
 
 }
