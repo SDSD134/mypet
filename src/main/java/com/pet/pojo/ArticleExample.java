@@ -165,63 +165,63 @@ public class ArticleExample {
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeIsNull() {
-            addCriterion("artcle_type is null");
+        public Criteria andArticleTypeIsNull() {
+            addCriterion("article_type is null");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeIsNotNull() {
-            addCriterion("artcle_type is not null");
+        public Criteria andArticleTypeIsNotNull() {
+            addCriterion("article_type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeEqualTo(Integer value) {
-            addCriterion("artcle_type =", value, "artcleType");
+        public Criteria andArticleTypeEqualTo(Integer value) {
+            addCriterion("article_type =", value, "articleType");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeNotEqualTo(Integer value) {
-            addCriterion("artcle_type <>", value, "artcleType");
+        public Criteria andArticleTypeNotEqualTo(Integer value) {
+            addCriterion("article_type <>", value, "articleType");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeGreaterThan(Integer value) {
-            addCriterion("artcle_type >", value, "artcleType");
+        public Criteria andArticleTypeGreaterThan(Integer value) {
+            addCriterion("article_type >", value, "articleType");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("artcle_type >=", value, "artcleType");
+        public Criteria andArticleTypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("article_type >=", value, "articleType");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeLessThan(Integer value) {
-            addCriterion("artcle_type <", value, "artcleType");
+        public Criteria andArticleTypeLessThan(Integer value) {
+            addCriterion("article_type <", value, "articleType");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("artcle_type <=", value, "artcleType");
+        public Criteria andArticleTypeLessThanOrEqualTo(Integer value) {
+            addCriterion("article_type <=", value, "articleType");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeIn(List<Integer> values) {
-            addCriterion("artcle_type in", values, "artcleType");
+        public Criteria andArticleTypeIn(List<Integer> values) {
+            addCriterion("article_type in", values, "articleType");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeNotIn(List<Integer> values) {
-            addCriterion("artcle_type not in", values, "artcleType");
+        public Criteria andArticleTypeNotIn(List<Integer> values) {
+            addCriterion("article_type not in", values, "articleType");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeBetween(Integer value1, Integer value2) {
-            addCriterion("artcle_type between", value1, value2, "artcleType");
+        public Criteria andArticleTypeBetween(Integer value1, Integer value2) {
+            addCriterion("article_type between", value1, value2, "articleType");
             return (Criteria) this;
         }
 
-        public Criteria andArtcleTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("artcle_type not between", value1, value2, "artcleType");
+        public Criteria andArticleTypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("article_type not between", value1, value2, "articleType");
             return (Criteria) this;
         }
 

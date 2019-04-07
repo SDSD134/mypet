@@ -9,6 +9,7 @@
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
+
 <!--配置数据源-->
     <context:property-placeholder location="classpath:properties/jdbc.properties"/>
     <!--数据库连接池-->
@@ -30,11 +31,18 @@
         <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
     </bean>
 
-
     <!--mapper扫描器  -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.pet.mapper" />
-    </bean>
+       <!-- <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>-->
+        <!--<property name="markerInterface"></property>-->
+        <property name="basePackage" value="com.pet.mapper,com.pet.dao" />
+</bean>
+
+
+
+
+
+
 
 
 </beans>
