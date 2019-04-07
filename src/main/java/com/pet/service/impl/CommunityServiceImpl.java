@@ -19,28 +19,26 @@ public class CommunityServiceImpl implements CommunityService {
     private ArticleMapper articleMapper;
     @Autowired
     private UserVoMapper userVoMapper;*/
-sdsd
-    sdsd
-        sdsds
-        sdsd
-       sddsd
-                sdsd
 
-sssssssssssssssssssssssssssssssss;
 
-    /*private ServerResponse<String> writeArticle( String username, Article article,
-                                        HttpSession session) {
-        Integer count = userVoMapper.checkUserName(username);
-        if (count == null) {
-            return ServerResponse.createByErrorMessage("没有这个用户");
-        }
+    private ServerResponse<String> writeArticle( String username, Article article,
+                                                 HttpSession session) {
+
         User user = userVoMapper.selectByUserName(username);
         article.setUserId(user.getUserId());
+
+        Object o = new Object();
+
         Integer result =articleMapper.insert(article);
         if (result ==null) {
             return ServerResponse.createByErrorMessage("创建帖子失败");
         }
         return ServerResponse.createBySuccessMessage("创建成功");
+    }
+
+/*    Integer count = userVoMapper.checkUserName(username);
+        if (count == null) {
+        return ServerResponse.createByErrorMessage("没有这个用户");
     }*/
 
     @Override
